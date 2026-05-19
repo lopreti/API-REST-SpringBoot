@@ -1,3 +1,9 @@
 package br.com.senai.api_cursos.cursos;
 
-public record CursoUpdateDTO(Long id, String nome, Periodo periodo) {}
+import io.swagger.v3.oas.annotations.media.Schema;
+
+public record CursoUpdateDTO(
+        @Schema(example = "1") Long id,
+        @Schema(example = "Desenvolvimento de Sistemas") String nome,
+        @Schema(example = "NOTURNO") Periodo periodo
+) {}
