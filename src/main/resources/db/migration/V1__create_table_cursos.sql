@@ -1,0 +1,7 @@
+CREATE TABLE cursos
+(
+    id      BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nome    VARCHAR(100) NOT NULL UNIQUE,
+    periodo VARCHAR(20)  NOT NULL,
+    ativo   BOOLEAN      NOT NULL DEFAULT TRUE
+);
