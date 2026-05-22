@@ -7,7 +7,7 @@ import java.util.List;
 public interface CursoRepository extends JpaRepository<Curso, Long> {
     List<Curso> findByAtivoTrue();
 
-    boolean existsByNome(String nome);
+    boolean existsByNomeAndAtivoTrue(String nome);
 
-    boolean existsByNomeAndIdNot(String nome, Long id);
+    boolean existsByNomeAndAtivoTrueAndIdNot(String nome, Long id);
 }

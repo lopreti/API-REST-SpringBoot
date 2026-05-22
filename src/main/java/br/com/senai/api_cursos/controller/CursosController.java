@@ -76,7 +76,7 @@ public class CursosController {
     })
     @PostMapping
     public ResponseEntity<?> criar(@RequestBody @Valid CursoRequestDTO dto) {
-        if (repository.existsByNome(dto.nome()))
+        if (repository.existsByNomeAndAtivoTrue(dto.nome()))
             return ResponseEntity.status(409).body("Nome já cadastrado");
         var curso = new Curso();
         curso.setNome(dto.nome());
@@ -101,7 +101,7 @@ public class CursosController {
         return repository.findById(dto.id())
                 .filter(c -> c.getAtivo())
                 .map(c -> {
-                    if (repository.existsByNomeAndIdNot(dto.nome(), dto.id()))
+                    if (repository.existsByNomeAndAtivoTrueAndIdNot(dto.nome(), dto.id()))
                         return ResponseEntity.status(409).body("Nome já cadastrado");
                     if (dto.nome() != null) c.setNome(dto.nome());
                     if (dto.periodo() != null) c.setPeriodo(dto.periodo());
@@ -128,4 +128,5 @@ public class CursosController {
                 })
                 .orElse(ResponseEntity.notFound().build());
     }
+
 }
