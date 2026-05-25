@@ -46,7 +46,7 @@ CREATE DATABASE api_cursos;
 ```properties
 spring.datasource.url=jdbc:mariadb://localhost:3306/api_cursos
 spring.datasource.username=root
-spring.datasource.password=senai
+spring.datasource.password=sua-senha
 spring.jpa.hibernate.ddl-auto=validate
 spring.flyway.enabled=true
 spring.flyway.baseline-on-migrate=true
@@ -59,7 +59,7 @@ spring.flyway.baseline-on-migrate=true
 
 5. Acesse o Swagger:
 ```
-http://localhost:8080/swagger-ui.html
+http://localhost:8080/lopreti
 ```
 
 ## Endpoints
